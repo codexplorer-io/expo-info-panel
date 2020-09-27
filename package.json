@@ -6,6 +6,7 @@
     "react": "*",
     "react-native-paper": "*",
     "styled-components": "*",
-    "@expo/vector-icons": "*"
+    "@expo/vector-icons": "*",
+    "lodash": "*"
   }
 }
