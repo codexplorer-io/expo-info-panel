@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InfoPanel With actions should render as expected 1`] = `
+<Styled(withTheme(Surface))>
+  <Styled(View)>
+    <Styled(Icon)
+      name="warning"
+      size={24}
+    />
+    <Styled(Caption)>
+      dummy text
+    </Styled(Caption)>
+  </Styled(View)>
+  <Styled(View)>
+    <withTheme(Button)
+      key="action 1"
+      labelStyle={
+        Object {
+          "fontSize": 12,
+        }
+      }
+      mode="text"
+      onPress={[MockFunction]}
+    >
+      action 1
+    </withTheme(Button)>
+    <withTheme(Button)
+      key="action 2"
+      labelStyle={
+        Object {
+          "fontSize": 12,
+        }
+      }
+      mode="text"
+      onPress={[MockFunction]}
+    >
+      action 2
+    </withTheme(Button)>
+  </Styled(View)>
+</Styled(withTheme(Surface))>
+`;
+
+exports[`InfoPanel Without actions should render as expected 1`] = `
+<Styled(withTheme(Surface))>
+  <Styled(View)>
+    <Styled(Icon)
+      name="warning"
+      size={24}
+    />
+    <Styled(Caption)>
+      dummy text
+    </Styled(Caption)>
+  </Styled(View)>
+</Styled(withTheme(Surface))>
+`;
