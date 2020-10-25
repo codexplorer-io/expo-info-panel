@@ -1,5 +1,5 @@
 {
-  "name": "@marko/expo-info-panel",
+  "name": "@codexporer.io/expo-info-panel",
   "version": "1.0.0",
   "main": "src/index.js",
   "peerDependencies": {
