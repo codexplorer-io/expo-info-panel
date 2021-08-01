@@ -4,7 +4,7 @@ import map from 'lodash/map';
 import { Surface, Caption, Button } from 'react-native-paper';
 import { AntDesign } from '@expo/vector-icons';
 
-export const InfoPanelRoot = styled(Surface)`
+const InfoPanelRoot = styled(Surface)`
     display: flex;
     flex-direction: column;
     elevation: 2;
@@ -13,22 +13,22 @@ export const InfoPanelRoot = styled(Surface)`
     background-color: ${({ theme: { colors: { background } } }) => background};
 `;
 
-export const InfoPanelMessage = styled.View`
+const InfoPanelMessage = styled.View`
     display: flex;
     flex-direction: row;
     align-items: center;
 `;
 
-export const InfoPanelIcon = styled(AntDesign)`
+const InfoPanelIcon = styled(AntDesign)`
     color: ${({ theme: { colors: { placeholder } } }) => placeholder};
 `;
 
-export const InfoPanelText = styled(Caption)`
+const InfoPanelText = styled(Caption)`
     margin-left: 10px;
     flex: 1;
 `;
 
-export const InfoPanelActions = styled.View`
+const InfoPanelActions = styled.View`
     display: flex;
     flex-direction: row;
     align-items: center;
