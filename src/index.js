@@ -4,6 +4,18 @@ import map from 'lodash/map';
 import { Surface, Caption, Button } from 'react-native-paper';
 import { AntDesign } from '@expo/vector-icons';
 
+export const INFO_PANEL_TYPE = {
+    info: 'info',
+    warning: 'warning',
+    error: 'error'
+};
+
+const getColor = ({ type, colors }) => ({
+    [INFO_PANEL_TYPE.info]: colors.placeholder,
+    [INFO_PANEL_TYPE.warning]: colors.warning,
+    [INFO_PANEL_TYPE.error]: colors.error
+})[type];
+
 const InfoPanelRoot = styled(Surface)`
     display: flex;
     flex-direction: column;
@@ -20,7 +32,7 @@ const InfoPanelMessage = styled.View`
 `;
 
 const InfoPanelIcon = styled(AntDesign)`
-    color: ${({ theme: { colors: { placeholder } } }) => placeholder};
+    color: ${({ theme: { colors }, type }) => getColor({ type, colors })};
 `;
 
 const InfoPanelText = styled(Caption)`
@@ -54,6 +66,7 @@ const renderActions = actions => actions && (
 
 export const InfoPanel = ({
     icon,
+    type = INFO_PANEL_TYPE.info,
     text,
     actions
 }) => (
@@ -62,6 +75,7 @@ export const InfoPanel = ({
             <InfoPanelIcon
                 name={icon}
                 size={24}
+                type={type}
             />
             <InfoPanelText>{text}</InfoPanelText>
         </InfoPanelMessage>
