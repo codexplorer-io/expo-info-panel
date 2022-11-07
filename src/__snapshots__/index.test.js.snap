@@ -6,6 +6,7 @@ exports[`InfoPanel With actions should render as expected 1`] = `
     <Styled(Icon)
       name="warning"
       size={24}
+      type="info"
     />
     <Styled(Caption)>
       dummy text
@@ -46,6 +47,7 @@ exports[`InfoPanel Without actions should render as expected 1`] = `
     <Styled(Icon)
       name="warning"
       size={24}
+      type="info"
     />
     <Styled(Caption)>
       dummy text
