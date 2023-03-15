@@ -16,7 +16,7 @@ exports[`InfoPanel With actions should render as expected 1`] = `
     <withTheme(Button)
       key="action 1"
       labelStyle={
-        Object {
+        {
           "fontSize": 12,
         }
       }
@@ -28,7 +28,7 @@ exports[`InfoPanel With actions should render as expected 1`] = `
     <withTheme(Button)
       key="action 2"
       labelStyle={
-        Object {
+        {
           "fontSize": 12,
         }
       }
