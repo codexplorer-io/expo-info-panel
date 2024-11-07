@@ -16,11 +16,16 @@ const getColor = ({ type, colors }) => ({
     [INFO_PANEL_TYPE.error]: colors.error
 })[type];
 
+export const createInfoPanelIconComponent = ({ Icon }) => styled(Icon)`
+    color: ${({ theme: { colors }, type }) => getColor({ type, colors })};
+`;
+
 const InfoPanelRoot = styled(Surface)`
     display: flex;
     flex-direction: column;
     elevation: 2;
     margin: 2px;
+    margin-right: ${({ styleMarginRight = 2 }) => styleMarginRight}px;
     padding: 5px;
     background-color: ${({ theme: { colors: { background } } }) => background};
 `;
@@ -31,9 +36,7 @@ const InfoPanelMessage = styled.View`
     align-items: center;
 `;
 
-const InfoPanelIcon = styled(AntDesign)`
-    color: ${({ theme: { colors }, type }) => getColor({ type, colors })};
-`;
+const InfoPanelIcon = createInfoPanelIconComponent({ Icon: AntDesign });
 
 const InfoPanelText = styled(Caption)`
     margin-left: 10px;
@@ -66,13 +69,15 @@ const renderActions = actions => actions && (
 
 export const InfoPanel = ({
     icon,
+    IconComponent = InfoPanelIcon,
     type = INFO_PANEL_TYPE.info,
     text,
+    styleMarginRight,
     actions
 }) => (
-    <InfoPanelRoot>
+    <InfoPanelRoot styleMarginRight={styleMarginRight}>
         <InfoPanelMessage>
-            <InfoPanelIcon
+            <IconComponent
                 name={icon}
                 size={24}
                 type={type}
